@@ -105,13 +105,45 @@ document.addEventListener("DOMContentLoaded", function () {
         "hi": "2024 18 जुलाई, रविवार को दोपहर 12:00 बजे स्थल पर"
     }
 
-    const messageTexts = {
-        "en-us": "We're excited to have you join us for the special event!",
-        "en-uk": "We're excited to have you join us for the special event!",
-        "de": "Wir freuen uns, dass Sie an diesem besonderen Ereignis teilnehmen!",
-        "te": "మీరు ఈ ప్రత్యేక కార్యక్రమంలో పాల్గొనడానికి మేము ఉత్సాహంగా ఉన్నాము!",
-        "hi": "हम आपके इस खास आयोजन में शामिल होने के लिए उत्साहित हैं!"
+    const hostsListTexts = {
+        "en-us": "Invitees",
+        "en-uk": "Invitees",
+        "de": "Gastgeber",//"Eingeladene",
+        "te": "అహ్వానించువారు",
+        "hi": "मेहमाननवाज़",//"निमंत्रित व्यक्ति"
     };
+    const hostsList = {
+        "en-us": [
+            "Venkata Reddy Pulagam",
+            "Vijaya Lakshmi Pulagam",
+            "Venkata Siva Prasad Reddy Pulagam",
+            "Joshna Pulagam"
+        ],
+        "en-uk": [
+            "Venkata Reddy Pulagam",
+            "Vijaya Lakshmi Pulagam",
+            "Venkata Siva Prasad Reddy Pulagam",
+            "Joshna Pulagam"
+        ],
+        "de": [
+            "Venkata Reddy Pulagam",
+            "Vijaya Lakshmi Pulagam",
+            "Venkata Siva Prasad Reddy Pulagam",
+            "Joshna Pulagam"
+        ],
+        "te": [
+            "వెంకట రెడ్డి పులగం",
+            "విజయ లక్ష్మి పులగం",
+            "వెంకట శివ ప్రసాద్ రెడ్డి పులగం",
+            "జ్యోత్స్న పులగం"
+        ],
+        "hi": [
+            "वेंकट रेड्डी पुलगम",
+            "विजया लक्ष्मी पुलगम",
+            "वेंकट शिव प्रसाद रेड्डी पुलगम",
+            "ज्योत्स्ना पुलगम"
+        ]
+    }
 
 
     const settingsBtn = document.getElementById('settings-btn');
@@ -158,6 +190,9 @@ document.addEventListener("DOMContentLoaded", function () {
         document.getElementById('house_warming_timings').textContent = hwarmingTime[language];
         document.getElementById('lunch_timings_text').textContent = lunchTimingsText[language];
         document.getElementById('lunch_timings').textContent = lunchTimings[language];
+        document.getElementById('p_hostlist_text').textContent = hostsListTexts[language];
+        let namesList = hostsList[language];
+        document.getElementById('p_hostlist').textContent = `${namesList[0]}, ${namesList[1]}, ${namesList[2]}, ${namesList[3]}`;
         // document.getElementById('message').textContent = messageTexts[language];
 
 
