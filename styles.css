@@ -1,0 +1,194 @@
+/* Basic styling for the page */
+/* Global Styles (applies to all devices) */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    transition: background-color 0.3s, color 0.3s;
+}
+.container {
+    padding: 20px;
+    text-align: center;
+}
+
+.div_good_sign_container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+.div_good_sign_holder{
+    display: flex;
+    justify-content: space-between;
+    height: auto;
+    width: 100%;
+}
+.p_good_sign{
+    text-align: left;
+    width: 110px;
+}
+
+.img_lordGanesha{
+    height: 150px;
+    width: 150px;
+}
+.invitation {
+    background: #f5f5f5;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    max-width: 800px;
+    margin: 20px auto;
+}
+.banana-tree {
+    position: fixed;
+    width: 100px;
+    height: auto;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.left-tree {
+    left: 0;
+}
+.right-tree {
+    right: 0;
+}
+
+
+.div_venue_timings_container{
+    display: flex;
+    flex-direction: row;
+    align-items: start;
+    justify-content: space-around;
+}
+
+.div_hw_timings_holder, .div_venue_address_holder, .div_lunch_timings_holder{
+    flex: 1;
+    overflow: hidden; /* Hides overflowed content */
+    text-overflow: ellipsis; /* Adds ellipsis if text overflows */
+    word-wrap: break-word; /* Allows long words to break and wrap to the next line */
+    overflow-wrap: break-word; /* Ensures long words break to prevent overflow */
+}
+
+.p_mini_headings{
+    font-weight: bold;
+}
+
+/* Floating button styling */
+.settings-btn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 24px;
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+}
+
+/* Settings panel styling */
+.settings-panel {
+    position: fixed;
+    bottom: -300px;
+    right: 0;
+    left: 0;
+    background-color: white;
+    box-shadow: 0px -2px 10px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    transition: bottom 0.3s ease-in-out;
+    z-index: 1000;
+    border-radius: 15px 15px 0 0;
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.settings-panel.open {
+    bottom: 0;
+}
+
+.close-btn {
+    background: transparent;
+    border: none;
+    font-size: 24px;
+    float: right;
+    cursor: pointer;
+}
+
+/* Dark mode styling */
+.dark-mode {
+    background-color: #333;
+    color: #f5f5f5;
+}
+
+/* Default for Desktop */
+/* @media (min-width: 1024px) {
+    .invitation {
+        max-width: 800px;
+    }
+
+    .banana-tree {
+        width: 100px;
+        height: auto;
+    }
+
+    .left-tree {
+        left: 0;
+    }
+
+    .right-tree {
+        right: 0;
+    }
+
+    /* Adjustments for Desktop * /
+    .settings-panel {
+        max-width: 400px;
+    }
+} */
+
+/* Mobile Styles */
+/* @media (max-width: 1023px) {
+    .invitation {
+        max-width: 100%;
+        margin: 10px;
+        padding: 15px;
+    }
+
+    .banana-tree {
+        width: 60px;
+    }
+
+    .settings-panel {
+        width: 100%;
+        border-radius: 10px 10px 0 0;
+        padding: 10px;
+    }
+
+    .settings-btn {
+        width: 40px;
+        height: 40px;
+        font-size: 20px;
+    }
+} */
+
+/* Specific styles for very small screens (e.g., phones) */
+/* @media (max-width: 480px) {
+    .invitation {
+        padding: 10px;
+        font-size: 14px;
+    }
+
+    .banana-tree {
+        width: 50px;
+    }
+
+    .settings-btn {
+        width: 35px;
+        height: 35px;
+        font-size: 18px;
+    }
+} */

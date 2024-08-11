@@ -1,0 +1,356 @@
+
+document.addEventListener("DOMContentLoaded", function () {
+    /*
+    const goodSign1Texts = {
+        "en-us": "Sreerasthu!",
+        "en-uk": "Sreerasthu!",
+        "de": "Willkommen!",
+        "te": "శ్రీరస్తు!",
+        "hi": "स्वागत है!"
+    }
+
+    const goodSign2Texts = {
+        "en-us": "Subhamastu!!",
+        "en-uk": "Subhamastu!!",
+        "de": "Willkommen!",
+        "te": "శుభమస్తు!!",
+        "hi": "स्वागत है!"
+    }
+
+    const goodSign3Texts = {
+        "en-us": "Avignamasthu!!!",
+        "en-uk": "Avignamasthu!!!",
+        "de": "Willkommen!",
+        "te": "అవిఘ్నమస్తు!!!",
+        "hi": "स्वागत है!"
+    }
+
+    const greetingTexts1 = {
+        "en-us": "House Warming Invitation",
+        "en-uk": "House Warming Invitation",
+        "de": "Willkommen!",
+        "te": "పులగం వారి",
+        "hi": "स्वागत है!"
+    }
+
+    const greetingTexts2 = {
+        "en-us": "",
+        "en-uk": "",
+        "de": "",
+        "te": "గృహ ప్రవేశం మరియు ప్రత్యేక పూజల ఆహ్వానం",
+        "hi": "!"
+    }
+
+    const SalutaionTexts2 = {
+        "en-us": "Dear",
+        "en-uk": "",
+        "de": "",
+        "te": " ల కీ,",
+        "hi": "!"
+    }
+
+    const introductionText = {
+        "en-us": "Welcome!",
+        "en-uk": "Welcome!",
+        "de": "Willkommen!",
+        "te": "మా కొత్త ఇంటి శుభవార్తను మీతో పంచుకోవడానికి చాలా ఆనందంగా ఉంది. ఈ కొత్త అధ్యాయం ప్రారంభంలో మీ అభిమానం మరియు ఆశీస్సులను కోరుకుంటున్నాం. ఈ సంతోషకరమైన సందర్భంలో మీరు పాల్గొనాలని కోరుకుంటున్నాము",
+        "hi": "स्वागत है!"
+    };
+
+    const venueText = {
+        "en-us": "Venue",
+        "en-uk": "Welcome!",
+        "de": "Willkommen!",
+        "te": "వేదిక",
+        "hi": "स्वागत है!"
+    };
+
+    const addressText = {
+        "en-us": "Plot No 7, Road no: 10, Tirumala Hills, Puppalguda, Manikonda Municipality, Gandipet, Hyderabad, Telangana - 500075",
+        "en-uk": "House Warming Invitation",
+        "de": "Willkommen!",
+        "te": "ప్లాట్ నం. 7, రోడ్ నం: 10, తిరుమల హిల్స్, పుప్పలగూడ, మనికొండ మున్సిపాలిటీ, గండిపేట్, హైదరాబాద్, తెలంగాణ - 500075",
+        "hi": "स्वागत है!"
+    }
+
+    const hwarmingTimeText = {
+        "en-us": "Venue",
+        "en-uk": "Welcome!",
+        "de": "Willkommen!",
+        "te": "సుముహూర్తం తేదీ ",
+        "hi": "स्वागत है!"
+    };
+
+    const hwarmingTime = {
+        "en-us": "Venue",
+        "en-uk": "Welcome!",
+        "de": "Willkommen!",
+        "te": ": శనివారం, రాత్రి 11:00 గంటలకు ఆ తర్వాత ఆదివారం తెల్లవారుజామున, గణపతి హోమం మరియు శ్రీ సత్యనారాయణ స్వామి వ్రతం",
+        "hi": "स्वागत है!"
+    };
+
+    const lunchTimingsText = {
+        "en-us": "Plot No 7, Road no: 10, Tirumala Hills, Puppalguda, Manikonda Municipality, Gandipet, Hyderabad, Telangana - 500075",
+        "en-uk": "House Warming Invitation",
+        "de": "Willkommen!",
+        "te": "విందు",
+        "hi": "स्वागत है!"
+    }
+
+    const lunchTimings = {
+        "en-us": "Plot No 7, Road no: 10, Tirumala Hills, Puppalguda, Manikonda Municipality, Gandipet, Hyderabad, Telangana - 500075",
+        "en-uk": "House Warming Invitation",
+        "de": "Willkommen!",
+        "te": "ఆదివారం మధ్యాహ్నం 12:00 గంటలకు వేదిక వద్ద",
+        "hi": "स्वागत है!"
+    }
+
+    const messageTexts = {
+        "en-us": "We're excited to have you join us for the special event!",
+        "en-uk": "We're excited to have you join us for the special event!",
+        "de": "Wir freuen uns, dass Sie an diesem besonderen Ereignis teilnehmen!",
+        "te": "మీరు ఈ ప్రత్యేక కార్యక్రమంలో పాల్గొనడానికి మేము ఉత్సాహంగా ఉన్నాము!",
+        "hi": "हम आपके इस खास आयोजन में शामिल होने के लिए उत्साहित हैं!"
+    };
+    */
+
+    const goodSign1Texts = {
+        "en-us": "Blessings!",
+        "en-uk": "Blessings!",
+        "de": "Segen!",
+        "te": "శ్రీరస్తు!",
+        "hi": "आशीर्वाद!"
+    }
+    
+    const goodSign2Texts = {
+        "en-us": "Best Wishes!",
+        "en-uk": "Best Wishes!",
+        "de": "Alles Gute!",
+        "te": "శుభమస్తు!!",
+        "hi": "शुभकामनाएँ!!"
+    }
+    
+    const goodSign3Texts = {
+        "en-us": "No Obstacles!",
+        "en-uk": "No Obstacles!",
+        "de": "Keine Hindernisse!",
+        "te": "అవిఘ్నమస్తు!!!",
+        "hi": "बिना रुकावट!"
+    }
+    
+    const greetingTexts1 = {
+
+    "en-us": "By Pulagam Family",
+    "en-uk": "By Pulagam Family",
+    "de": "Von der Familie Pulagam",
+    "te": "పులగం వారి",
+    "hi": "पुलगम परिवार द्वारा"
+        /*
+        "en-us": "House Warming Invitation",
+        "en-uk": "House Warming Invitation",
+        "de": "Einweihungseinladung",
+        "te": "హౌస్ వార్మింగ్ ఆహ్వానం",
+        "hi": "हाउस वॉर्मिंग निमंत्रण"
+        */
+    }
+    
+    const greetingTexts2 = {
+        "en-us": "We are delighted to invite you to our house warming ceremony and special poojas.",
+        "en-uk": "We are delighted to invite you to our house warming ceremony and special poojas.",
+        "de": "Wir freuen uns, Sie zu unserer Einweihungszeremonie und speziellen Pujas einzuladen.",
+        "te": "గృహ ప్రవేశం మరియు ప్రత్యేక పూజల ఆహ్వానం.",
+        "hi": "हम आपको हमारे हाउस वॉर्मिंग समारोह और विशेष पूजा के लिए आमंत्रित करके खुशी महसूस कर रहे हैं।"
+    }
+    
+    const SalutationTexts2 = {
+        "en-us": "Dear",
+        "en-uk": "Dear",
+        "de": "Liebe/r",
+        "te": "ప్రియుడు/ప్రియురాలా",
+        "hi": "प्रिय"
+    }
+    
+    const introductionText = {
+        "en-us": "Welcome!",
+        "en-uk": "Welcome!",
+        "de": "Willkommen!",
+        "te": "మా కొత్త ఇంటి శుభవార్తను మీతో పంచుకోవడానికి చాలా ఆనందంగా ఉంది. ఈ కొత్త అధ్యాయం ప్రారంభంలో మీ అభిమానం మరియు ఆశీస్సులను కోరుకుంటున్నాం. ఈ సంతోషకరమైన సందర్భంలో మీరు పాల్గొనాలని కోరుకుంటున్నాము",
+        "hi": "स्वागत है! हमें खुशी है कि हम आपके साथ हमारे नए घर की खुशी साझा कर सकते हैं। इस नए अध्याय की शुरुआत में, हम आपके प्यार और आशीर्वाद की कामना करते हैं। इस खुशी के मौके पर हम आपको आमंत्रित करते हैं।"
+    };
+    
+    const venueText = {
+        "en-us": "Venue",
+        "en-uk": "Venue",
+        "de": "Veranstaltungsort",
+        "te": "వేదిక",
+        "hi": "स्थान"
+    };
+    
+    const addressText = {
+        "en-us": "Plot No 7, Road no: 10, Tirumala Hills, Puppalguda, Manikonda Municipality, Gandipet, Hyderabad, Telangana - 500075",
+        "en-uk": "Plot No 7, Road no: 10, Tirumala Hills, Puppalguda, Manikonda Municipality, Gandipet, Hyderabad, Telangana - 500075",
+        "de": "Grundstück Nr. 7, Straße Nr. 10, Tirumala Hills, Puppalguda, Manikonda Municipality, Gandipet, Hyderabad, Telangana - 500075",
+        "te": "ప్లాట్ నం. 7, రోడ్ నం: 10, తిరుమల హిల్స్, పుప్పలగూడ, మనికొండ మున్సిపాలిటీ, గండిపేట్, హైదరాబాద్, తెలంగాణ - 500075",
+        "hi": "प्लॉट नंबर 7, रोड नंबर 10, तिरुमला हिल्स, पुप्पलगुड़ा, माणिकोंडा नगरपालिका, गंडिपेट, हैदराबाद, तेलंगाना - 500075"
+    }
+    
+    const hwarmingTimeText = {
+        "en-us": "Event Timing",
+        "en-uk": "Event Timing",
+        "de": "Veranstaltungszeit",
+        "te": "సమయం",
+        "hi": "समय"
+    };
+    
+    const hwarmingTime = {
+        "en-us": ": Saturday, 11:00 PM followed by Ganapathi Homam and Satyanarayana Swamy Vratham on Sunday morning",
+        "en-uk": ": Saturday, 11:00 PM followed by Ganapathi Homam and Satyanarayana Swamy Vratham on Sunday morning",
+        "de": ": Samstag, 23:00 Uhr, gefolgt von Ganapathi Homam und Satyanarayana Swamy Vratham am Sonntagmorgen",
+        "te": ": శనివారం, రాత్రి 11:00 గంటలకు ఆ తర్వాత ఆదివారం తెల్లవారుజామున, గణపతి హోమం మరియు శ్రీ సత్యనారాయణ స్వామి వ్రతం",
+        "hi": ": शनिवार, रात 11:00 बजे के बाद गणपति होमम और रविवार सुबह सत्या नारायण स्वामी व्रत"
+    }
+    
+    const lunchTimingsText = {
+        "en-us": "Lunch",
+        "en-uk": "Lunch",
+        "de": "Mittagessen",
+        "te": "విందు",
+        "hi": "भोजन"
+    }
+    
+    const lunchTimings = {
+        "en-us": "Sunday at 12:00 PM at the venue",
+        "en-uk": "Sunday at 12:00 PM at the venue",
+        "de": "Sonntag um 12:00 Uhr am Veranstaltungsort",
+        "te": "ఆదివారం మధ్యాహ్నం 12:00 గంటలకు వేదిక వద్ద",
+        "hi": "रविवार को दोपहर 12:00 बजे स्थल पर"
+    }
+    
+    const messageTexts = {
+        "en-us": "We're excited to have you join us for the special event!",
+        "en-uk": "We're excited to have you join us for the special event!",
+        "de": "Wir freuen uns, dass Sie an diesem besonderen Ereignis teilnehmen!",
+        "te": "మీరు ఈ ప్రత్యేక కార్యక్రమంలో పాల్గొనడానికి మేము ఉత్సాహంగా ఉన్నాము!",
+        "hi": "हम आपके इस खास आयोजन में शामिल होने के लिए उत्साहित हैं!"
+    };
+    
+
+    const settingsBtn = document.getElementById('settings-btn');
+    const settingsPanel = document.getElementById('settings-panel');
+    const closeBtn = document.getElementById('close-btn');
+    const languageSelect = document.getElementById('language-select');
+    const themeToggle = document.getElementById('theme-toggle');
+
+    function getQueryParam(param) {
+        const urlParams = new URLSearchParams(window.location.search);
+        return urlParams.get(param);
+    }
+
+    function loadPreferences() {
+        const savedLanguage = localStorage.getItem('language') || 'en-us';
+        const savedTheme = localStorage.getItem('theme') || 'light';
+
+        languageSelect.value = savedLanguage;
+        document.body.classList.toggle('dark-mode', savedTheme === 'dark');
+        applyLanguage(savedLanguage);
+    }
+
+    function savePreferences() {
+        localStorage.setItem('language', languageSelect.value);
+        localStorage.setItem('theme', document.body.classList.contains('dark-mode') ? 'dark' : 'light');
+    }
+
+    function applyLanguage(language) {
+        const namesParam = getQueryParam('names');
+        const namesArray = namesParam ? namesParam.split(',') : ['Guest'];
+        const namesString = namesArray.join(', ');
+        //document.getElementById('names').textContent = `Dear ${namesString},`;
+
+        document.getElementById('good_sign_1').textContent = goodSign1Texts[language];
+        document.getElementById('good_sign_2').textContent = goodSign2Texts[language];
+        document.getElementById('good_sign_3').textContent = goodSign3Texts[language];
+        document.getElementById('greeting_1').textContent = greetingTexts1[language];
+        document.getElementById('greeting_2').textContent = greetingTexts2[language];
+        //document.getElementById('salutation').textContent = namesString + SalutaionTexts2[language];
+        document.getElementById('introduction').textContent = introductionText[language];
+        document.getElementById('venue').textContent = venueText[language];
+        document.getElementById('venue_address').textContent = addressText[language];
+        document.getElementById('house_warming_timings_text').textContent = hwarmingTimeText[language];
+        document.getElementById('house_warming_timings').textContent = hwarmingTime[language];
+        document.getElementById('lunch_timings_text').textContent = lunchTimingsText[language];
+        document.getElementById('lunch_timings').textContent = lunchTimings[language];
+        // document.getElementById('message').textContent = messageTexts[language];
+
+        
+    }
+
+    function toggleTheme() {
+        document.body.classList.toggle('dark-mode');
+        savePreferences();
+    }
+
+    settingsBtn.addEventListener('click', () => {
+        settingsPanel.classList.toggle('open');
+    });
+
+    closeBtn.addEventListener('click', () => {
+        settingsPanel.classList.remove('open');
+    });
+
+    languageSelect.addEventListener('change', () => {
+        applyLanguage(languageSelect.value);
+        savePreferences();
+    });
+
+    themeToggle.addEventListener('click', toggleTheme);
+
+    loadPreferences();
+
+    // Service worker registration
+    if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('/service-worker.js')
+            .then(function (registration) {
+                console.log('Service Worker registered with scope:', registration.scope);
+            }).catch(function (error) {
+                console.log('Service Worker registration failed:', error);
+            });
+    }
+
+
+    
+    /*
+    
+        "పులగం వారి గ్రుహప్రవేశ ఆహ్వనం",
+    "గృహ ప్రవేశం మరియు ప్రత్యేక పూజ ఆహ్వానం"
+    "శ్రీ సత్యనారయణ స్వమి వ్రతం"
+    "గణపతి హోమం"
+    "శ్రీ గణపతి హోమం మరియు పూజ:
+తేదీ: ఆగస్టు 17, 2024
+సమయం: [సమయం చేర్చండి]
+
+తేదీ: శనివారం
+సమయం: రాత్రి 11:00 గంటలకు ఖచ్చితంగా
+
+ఆ తర్వాత:
+గణపతి హోమం
+శ్రీ సత్యనారాయణ స్వామి వ్రతం
+తేదీ: ఆదివారం
+
+శ్రీ సత్యనారాయణ స్వామి వ్రతం మరియు భోజనం:
+తేదీ: ఆగస్టు 18, 2024
+సమయం: [సమయం చేర్చండి]"
+
+ప్రియమైన [కుటుంబం/మిత్రులు],
+
+మా కొత్త ఇంటి శుభవార్తను మీతో పంచుకోవడానికి చాలా ఆనందంగా ఉంది. ఈ కొత్త అధ్యాయం ప్రారంభంలో మీ అభిమానం మరియు ఆశీస్సులను కోరుకుంటున్నాం. ఈ సంతోషకరమైన సందర్భంలో మీరు పాల్గొంటే, అది మా జీవితంలో ఒక ప్రత్యేక ఘట్టం అవుతుంది.
+
+"
+గృహ ప్రవేశం ఉత్సవం:
+తేదీ: ఆగస్టు 17, 2024
+సమయం: [సమయం చేర్చండి]
+చిరునామా: ప్లాట్ నంబర్ 7,8 సర్వే నంబర్ 87 మరియు 119, నెక్నంపూర్ రోడ్డు, పుప్పల్ గూడ, పుప్పలగూడ, మనికొండ, మున్సిపాలిటీ, గండిపేట్, హైదరాబాద్, తెలంగాణ 500075
+"
+
+    */
+
+});
