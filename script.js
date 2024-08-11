@@ -41,14 +41,6 @@ document.addEventListener("DOMContentLoaded", function () {
         "hi": "हम आपको हमारे हाउस वॉर्मिंग समारोह और विशेष पूजा के लिए आमंत्रित करके खुशी महसूस कर रहे हैं।"
     }
 
-    const SalutationTexts2 = {
-        "en-us": "Dear",
-        "en-uk": "Dear",
-        "de": "Liebe/r",
-        "te": "ప్రియుడు/ప్రియురాలా",
-        "hi": "प्रिय"
-    }
-
     const introductionText = {
         "en-us": "We are very happy to share the good news of our new home with you. We seek your love and blessings as we begin this new chapter. We hope you will join us in this joyous occasion.",
         "en-uk": "We are very happy to share the good news of our new home with you. We seek your love and blessings as we begin this new chapter. We hope you will join us in this joyous occasion.",
@@ -106,8 +98,8 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     const hostsListTexts = {
-        "en-us": "Invitees",
-        "en-uk": "Invitees",
+        "en-us": "Hosts",
+        "en-uk": "Hosts",
         "de": "Gastgeber",//"Eingeladene",
         "te": "అహ్వానించువారు",
         "hi": "मेहमाननवाज़",//"निमंत्रित व्यक्ति"
@@ -117,31 +109,36 @@ document.addEventListener("DOMContentLoaded", function () {
             "Venkata Reddy Pulagam",
             "Vijaya Lakshmi Pulagam",
             "Venkata Siva Prasad Reddy Pulagam",
-            "Joshna Pulagam"
+            "Joshna Pulagam",
+            "Laasyavi Reddy Pulagam"
         ],
         "en-uk": [
             "Venkata Reddy Pulagam",
             "Vijaya Lakshmi Pulagam",
             "Venkata Siva Prasad Reddy Pulagam",
-            "Joshna Pulagam"
+            "Joshna Pulagam",
+            "Laasyavi Reddy Pulagam"
         ],
         "de": [
             "Venkata Reddy Pulagam",
             "Vijaya Lakshmi Pulagam",
             "Venkata Siva Prasad Reddy Pulagam",
-            "Joshna Pulagam"
+            "Joshna Pulagam",
+            "Laasyavi Reddy Pulagam"
         ],
         "te": [
             "వెంకట రెడ్డి పులగం",
             "విజయ లక్ష్మి పులగం",
             "వెంకట శివ ప్రసాద్ రెడ్డి పులగం",
-            "జ్యోత్స్న పులగం"
+            "జ్యోత్స్న పులగం",
+            "లాస్యవి రెడ్డి పులగం"
         ],
         "hi": [
             "वेंकट रेड्डी पुलगम",
             "विजया लक्ष्मी पुलगम",
             "वेंकट शिव प्रसाद रेड्डी पुलगम",
-            "ज्योत्स्ना पुलगम"
+            "ज्योत्स्ना पुलगम",
+            "लास्यवि रेड्डी पुलगम"
         ]
     }
 
@@ -161,9 +158,10 @@ document.addEventListener("DOMContentLoaded", function () {
         const savedLanguage = localStorage.getItem('language') || 'en-us';
         const savedTheme = localStorage.getItem('theme') || 'light';
 
-        languageSelect.value = savedLanguage;
-        document.body.classList.toggle('dark-mode', savedTheme === 'dark');
-        applyLanguage(savedLanguage);
+        //languageSelect.value = savedLanguage;
+        //document.body.classList.toggle('dark-mode', savedTheme === 'dark');
+        initializeLanguage();
+        //applyLanguage(savedLanguage);
     }
 
     function savePreferences() {
@@ -192,7 +190,7 @@ document.addEventListener("DOMContentLoaded", function () {
         document.getElementById('lunch_timings').textContent = lunchTimings[language];
         document.getElementById('p_hostlist_text').textContent = hostsListTexts[language];
         let namesList = hostsList[language];
-        document.getElementById('p_hostlist').textContent = `${namesList[0]}, ${namesList[1]}, ${namesList[2]}, ${namesList[3]}`;
+        document.getElementById('p_hostlist').textContent = `${namesList[0]}, ${namesList[1]}, ${namesList[2]}, ${namesList[3]}, ${namesList[4]}`;
         // document.getElementById('message').textContent = messageTexts[language];
 
 
@@ -211,9 +209,42 @@ document.addEventListener("DOMContentLoaded", function () {
         settingsPanel.classList.remove('open');
     });
 
-    languageSelect.addEventListener('change', () => {
+// Function to set the language based on the query parameter or default
+function initializeLanguage() {
+    const defaultLanguage = 'en-us'; // Set the default language
+    const queryLanguage = getQueryParam('lan');
+    const savedLanguage = localStorage.getItem('language');
+    
+    // Determine the language to use
+    const language =  queryLanguage || savedLanguage || defaultLanguage;
+    
+    // Save the language in localStorage
+    localStorage.setItem('language', language);
+    
+    // Set the language dropdown value
+    languageSelect.value = language;
+    
+    // Apply the language to the page content
+    applyLanguage(language);
+}
+
+    // Function to update URL with the selected language
+function updateUrlParameter(language) {
+    const url = new URL(window.location);
+    url.searchParams.set('lan', language);
+    window.history.pushState({}, '', url);
+}
+
+    languageSelect.addEventListener('change', (event) => {
         applyLanguage(languageSelect.value);
         savePreferences();
+        updateUrlParameter(languageSelect.value);
+/*
+        const selectedLanguage = event.target.value;
+    applyLanguage(selectedLanguage);
+    updateUrlParameter(selectedLanguage);
+    localStorage.setItem('language', selectedLanguage);
+    */
     });
 
     //themeToggle.addEventListener('click', toggleTheme);
@@ -229,7 +260,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 console.log('Service Worker registration failed:', error);
             });
     }
-
+});
 
 
     /*
@@ -266,5 +297,3 @@ document.addEventListener("DOMContentLoaded", function () {
 "
 
     */
-
-});
