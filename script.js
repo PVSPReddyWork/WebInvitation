@@ -1,119 +1,5 @@
 
 document.addEventListener("DOMContentLoaded", function () {
-    /*
-    const goodSign1Texts = {
-        "en-us": "Sreerasthu!",
-        "en-uk": "Sreerasthu!",
-        "de": "Willkommen!",
-        "te": "శ్రీరస్తు!",
-        "hi": "स्वागत है!"
-    }
-
-    const goodSign2Texts = {
-        "en-us": "Subhamastu!!",
-        "en-uk": "Subhamastu!!",
-        "de": "Willkommen!",
-        "te": "శుభమస్తు!!",
-        "hi": "स्वागत है!"
-    }
-
-    const goodSign3Texts = {
-        "en-us": "Avignamasthu!!!",
-        "en-uk": "Avignamasthu!!!",
-        "de": "Willkommen!",
-        "te": "అవిఘ్నమస్తు!!!",
-        "hi": "स्वागत है!"
-    }
-
-    const greetingTexts1 = {
-        "en-us": "House Warming Invitation",
-        "en-uk": "House Warming Invitation",
-        "de": "Willkommen!",
-        "te": "పులగం వారి",
-        "hi": "स्वागत है!"
-    }
-
-    const greetingTexts2 = {
-        "en-us": "",
-        "en-uk": "",
-        "de": "",
-        "te": "గృహ ప్రవేశం మరియు ప్రత్యేక పూజల ఆహ్వానం",
-        "hi": "!"
-    }
-
-    const SalutaionTexts2 = {
-        "en-us": "Dear",
-        "en-uk": "",
-        "de": "",
-        "te": " ల కీ,",
-        "hi": "!"
-    }
-
-    const introductionText = {
-        "en-us": "Welcome!",
-        "en-uk": "Welcome!",
-        "de": "Willkommen!",
-        "te": "మా కొత్త ఇంటి శుభవార్తను మీతో పంచుకోవడానికి చాలా ఆనందంగా ఉంది. ఈ కొత్త అధ్యాయం ప్రారంభంలో మీ అభిమానం మరియు ఆశీస్సులను కోరుకుంటున్నాం. ఈ సంతోషకరమైన సందర్భంలో మీరు పాల్గొనాలని కోరుకుంటున్నాము",
-        "hi": "स्वागत है!"
-    };
-
-    const venueText = {
-        "en-us": "Venue",
-        "en-uk": "Welcome!",
-        "de": "Willkommen!",
-        "te": "వేదిక",
-        "hi": "स्वागत है!"
-    };
-
-    const addressText = {
-        "en-us": "Plot No 7, Road no: 10, Tirumala Hills, Puppalguda, Manikonda Municipality, Gandipet, Hyderabad, Telangana - 500075",
-        "en-uk": "House Warming Invitation",
-        "de": "Willkommen!",
-        "te": "ప్లాట్ నం. 7, రోడ్ నం: 10, తిరుమల హిల్స్, పుప్పలగూడ, మనికొండ మున్సిపాలిటీ, గండిపేట్, హైదరాబాద్, తెలంగాణ - 500075",
-        "hi": "स्वागत है!"
-    }
-
-    const hwarmingTimeText = {
-        "en-us": "Venue",
-        "en-uk": "Welcome!",
-        "de": "Willkommen!",
-        "te": "సుముహూర్తం తేదీ ",
-        "hi": "स्वागत है!"
-    };
-
-    const hwarmingTime = {
-        "en-us": "Venue",
-        "en-uk": "Welcome!",
-        "de": "Willkommen!",
-        "te": ": శనివారం, రాత్రి 11:00 గంటలకు ఆ తర్వాత ఆదివారం తెల్లవారుజామున, గణపతి హోమం మరియు శ్రీ సత్యనారాయణ స్వామి వ్రతం",
-        "hi": "स्वागत है!"
-    };
-
-    const lunchTimingsText = {
-        "en-us": "Plot No 7, Road no: 10, Tirumala Hills, Puppalguda, Manikonda Municipality, Gandipet, Hyderabad, Telangana - 500075",
-        "en-uk": "House Warming Invitation",
-        "de": "Willkommen!",
-        "te": "విందు",
-        "hi": "स्वागत है!"
-    }
-
-    const lunchTimings = {
-        "en-us": "Plot No 7, Road no: 10, Tirumala Hills, Puppalguda, Manikonda Municipality, Gandipet, Hyderabad, Telangana - 500075",
-        "en-uk": "House Warming Invitation",
-        "de": "Willkommen!",
-        "te": "ఆదివారం మధ్యాహ్నం 12:00 గంటలకు వేదిక వద్ద",
-        "hi": "स्वागत है!"
-    }
-
-    const messageTexts = {
-        "en-us": "We're excited to have you join us for the special event!",
-        "en-uk": "We're excited to have you join us for the special event!",
-        "de": "Wir freuen uns, dass Sie an diesem besonderen Ereignis teilnehmen!",
-        "te": "మీరు ఈ ప్రత్యేక కార్యక్రమంలో పాల్గొనడానికి మేము ఉత్సాహంగా ఉన్నాము!",
-        "hi": "हम आपके इस खास आयोजन में शामिल होने के लिए उत्साहित हैं!"
-    };
-    */
-
     const goodSign1Texts = {
         "en-us": "Blessings!",
         "en-uk": "Blessings!",
@@ -121,7 +7,7 @@ document.addEventListener("DOMContentLoaded", function () {
         "te": "శ్రీరస్తు!",
         "hi": "आशीर्वाद!"
     }
-    
+
     const goodSign2Texts = {
         "en-us": "Best Wishes!",
         "en-uk": "Best Wishes!",
@@ -129,7 +15,7 @@ document.addEventListener("DOMContentLoaded", function () {
         "te": "శుభమస్తు!!",
         "hi": "शुभकामनाएँ!!"
     }
-    
+
     const goodSign3Texts = {
         "en-us": "No Obstacles!",
         "en-uk": "No Obstacles!",
@@ -137,23 +23,16 @@ document.addEventListener("DOMContentLoaded", function () {
         "te": "అవిఘ్నమస్తు!!!",
         "hi": "बिना रुकावट!"
     }
-    
+
     const greetingTexts1 = {
 
-    "en-us": "By Pulagam Family",
-    "en-uk": "By Pulagam Family",
-    "de": "Von der Familie Pulagam",
-    "te": "పులగం వారి",
-    "hi": "पुलगम परिवार द्वारा"
-        /*
-        "en-us": "House Warming Invitation",
-        "en-uk": "House Warming Invitation",
-        "de": "Einweihungseinladung",
-        "te": "హౌస్ వార్మింగ్ ఆహ్వానం",
-        "hi": "हाउस वॉर्मिंग निमंत्रण"
-        */
+        "en-us": "By Pulagam Family",
+        "en-uk": "By Pulagam Family",
+        "de": "Von der Familie Pulagam",
+        "te": "పులగం వారి",
+        "hi": "पुलगम परिवार द्वारा"
     }
-    
+
     const greetingTexts2 = {
         "en-us": "We are delighted to invite you to our house warming ceremony and special poojas.",
         "en-uk": "We are delighted to invite you to our house warming ceremony and special poojas.",
@@ -161,7 +40,7 @@ document.addEventListener("DOMContentLoaded", function () {
         "te": "గృహ ప్రవేశం మరియు ప్రత్యేక పూజల ఆహ్వానం.",
         "hi": "हम आपको हमारे हाउस वॉर्मिंग समारोह और विशेष पूजा के लिए आमंत्रित करके खुशी महसूस कर रहे हैं।"
     }
-    
+
     const SalutationTexts2 = {
         "en-us": "Dear",
         "en-uk": "Dear",
@@ -169,23 +48,15 @@ document.addEventListener("DOMContentLoaded", function () {
         "te": "ప్రియుడు/ప్రియురాలా",
         "hi": "प्रिय"
     }
-    /*
-    const introductionText = {
-        "en-us": "Welcome!",
-        "en-uk": "Welcome!",
-        "de": "Willkommen!",
-        "te": "మా కొత్త ఇంటి శుభవార్తను మీతో పంచుకోవడానికి చాలా ఆనందంగా ఉంది. ఈ కొత్త అధ్యాయం ప్రారంభంలో మీ అభిమానం మరియు ఆశీస్సులను కోరుకుంటున్నాం. ఈ సంతోషకరమైన సందర్భంలో మీరు పాల్గొనాలని కోరుకుంటున్నాము",
-        "hi": "स्वागत है! हमें खुशी है कि हम आपके साथ हमारे नए घर की खुशी साझा कर सकते हैं। इस नए अध्याय की शुरुआत में, हम आपके प्यार और आशीर्वाद की कामना करते हैं। इस खुशी के मौके पर हम आपको आमंत्रित करते हैं।"
-    };
-*/
+
     const introductionText = {
         "en-us": "We are very happy to share the good news of our new home with you. We seek your love and blessings as we begin this new chapter. We hope you will join us in this joyous occasion.",
         "en-uk": "We are very happy to share the good news of our new home with you. We seek your love and blessings as we begin this new chapter. We hope you will join us in this joyous occasion.",
         "de": "Wir freuen uns sehr, Ihnen die frohe Botschaft von unserem neuen Zuhause mitzuteilen. Wir suchen Ihre Liebe und Ihren Segen, während wir dieses neue Kapitel beginnen. Wir hoffen, dass Sie an diesem freudigen Anlass teilnehmen werden.",
-        "te": "మా కొత్త ఇంటి శుభవార్తను మీతో పంచుకోవడానికి చాలా ఆనందంగా ఉంది. ఈ కొత్త అధ్యాయం ప్రారంభంలో మీ అభిమానం మరియు ఆశీస్సులను కోరుకుంటున్నాం. ఈ సంతోషకరమైన సందర్భంలో మీరు పాల్గొనాలని కోరుకుంటున్నాము",
-        "hi": "हमें आपके साथ हमारे नए घर की शुभ खबर साझा करते हुए बहुत खुशी हो रही है। इस नए अध्याय की शुरुआत में हम आपका प्यार और आशीर्वाद चाहते हैं। हम आशा करते हैं कि आप इस खुशी के मौके पर हमारे साथ जुड़ेंगे।"
+        "te": "మా కొత్త ఇంటి శుభవార్తను మీతో పంచుకోవడానికి చాలా ఆనందంగా ఉంది. ఈ కొత్త అధ్యాయం ప్రారంభంలో మీ అభిమానం మరియు ఆశీస్సులను కోరుకుంటున్నాం. ఈ సంతోషకరమైన సందర్భంలో మీరు పాల్గొనాలని కోరుకుంటున్నాము.",
+        "hi": "हमें आपके साथ हमारे नए घर की शुभ खबर साझा करते हुए बहुत खुशी हो रही है। इस नए अध्याय की शुरुआत में हम आपका प्यार और आशीर्वाद चाहते हैं। हम आशा करते हैं कि आप इस खुशी के मौके पर हमारे साथ जुड़ेंगे।."
     };
-    
+
     const venueText = {
         "en-us": "Venue",
         "en-uk": "Venue",
@@ -193,15 +64,15 @@ document.addEventListener("DOMContentLoaded", function () {
         "te": "వేదిక",
         "hi": "स्थान"
     };
-    
+
     const addressText = {
-        "en-us": "Plot No 7, Road no: 10, Tirumala Hills, Puppalguda, Manikonda Municipality, Gandipet, Hyderabad, Telangana - 500075",
-        "en-uk": "Plot No 7, Road no: 10, Tirumala Hills, Puppalguda, Manikonda Municipality, Gandipet, Hyderabad, Telangana - 500075",
-        "de": "Grundstück Nr. 7, Straße Nr. 10, Tirumala Hills, Puppalguda, Manikonda Municipality, Gandipet, Hyderabad, Telangana - 500075",
-        "te": "ప్లాట్ నం. 7, రోడ్ నం: 10, తిరుమల హిల్స్, పుప్పలగూడ, మనికొండ మున్సిపాలిటీ, గండిపేట్, హైదరాబాద్, తెలంగాణ - 500075",
-        "hi": "प्लॉट नंबर 7, रोड नंबर 10, तिरुमला हिल्स, पुप्पलगुड़ा, माणिकोंडा नगरपालिका, गंडिपेट, हैदराबाद, तेलंगाना - 500075"
+        "en-us": "Plot No 7, Road no: 10, Tirumala Hills, Puppalguda, Manikonda, Hyderabad, Telangana - 500075",
+        "en-uk": "Plot No 7, Road no: 10, Tirumala Hills, Puppalguda, Manikonda, Hyderabad, Telangana - 500075",
+        "de": "Grundstück Nr. 7, Straße Nr. 10, Tirumala Hills, Puppalguda, Manikonda, Hyderabad, Telangana - 500075",
+        "te": "ప్లాట్ నం. 7, రోడ్ నం: 10, తిరుమల హిల్స్, పుప్పలగూడ, మనికొండ, హైదరాబాద్, తెలంగాణ - 500075",
+        "hi": "प्लॉट नंबर 7, रोड नंबर 10, तिरुमला हिल्स, पुप्पलगुड़ा, माणिकोंडा, हैदराबाद, तेलंगाना - 500075"
     }
-    
+
     const hwarmingTimeText = {
         "en-us": "Event Timing",
         "en-uk": "Event Timing",
@@ -209,15 +80,15 @@ document.addEventListener("DOMContentLoaded", function () {
         "te": "సమయం",
         "hi": "समय"
     };
-    
+
     const hwarmingTime = {
-        "en-us": ": Saturday, 11:00 PM followed by Ganapathi Homam and Satyanarayana Swamy Vratham on Sunday morning",
-        "en-uk": ": Saturday, 11:00 PM followed by Ganapathi Homam and Satyanarayana Swamy Vratham on Sunday morning",
-        "de": ": Samstag, 23:00 Uhr, gefolgt von Ganapathi Homam und Satyanarayana Swamy Vratham am Sonntagmorgen",
-        "te": ": శనివారం, రాత్రి 11:00 గంటలకు ఆ తర్వాత ఆదివారం తెల్లవారుజామున, గణపతి హోమం మరియు శ్రీ సత్యనారాయణ స్వామి వ్రతం",
-        "hi": ": शनिवार, रात 11:00 बजे के बाद गणपति होमम और रविवार सुबह सत्या नारायण स्वामी व्रत"
+        "en-us": "2024 July 17 Saturday, 11:00 PM followed by Ganapathi Homam and Satyanarayana Swamy Vratham on Sunday morning",
+        "en-uk": "2024 July 17 Saturday, 11:00 PM followed by Ganapathi Homam and Satyanarayana Swamy Vratham on Sunday morning",
+        "de": "2024 Am 17. Juli, Samstag, 23:00 Uhr, gefolgt von Ganapathi Homam und Satyanarayana Swamy Vratham am Sonntagmorgen",
+        "te": "2024 జూలై  17, శనివారం రాత్రి 11:00 గంటలకు ఆ తర్వాత ఆదివారం తెల్లవారుజామున, గణపతి హోమం మరియు శ్రీ సత్యనారాయణ స్వామి వ్రతం",
+        "hi": "2024 17 जुलाई, शनिवार, रात 11:00 बजे के बाद गणपति होमम और रविवार सुबह सत्या नारायण स्वामी व्रत"
     }
-    
+
     const lunchTimingsText = {
         "en-us": "Lunch",
         "en-uk": "Lunch",
@@ -225,15 +96,15 @@ document.addEventListener("DOMContentLoaded", function () {
         "te": "విందు",
         "hi": "भोजन"
     }
-    
+
     const lunchTimings = {
-        "en-us": "Sunday at 12:00 PM at the venue",
-        "en-uk": "Sunday at 12:00 PM at the venue",
-        "de": "Sonntag um 12:00 Uhr am Veranstaltungsort",
-        "te": "ఆదివారం మధ్యాహ్నం 12:00 గంటలకు వేదిక వద్ద",
-        "hi": "रविवार को दोपहर 12:00 बजे स्थल पर"
+        "en-us": "2024 July 18 Sunday, 12:00 PM at the venue",
+        "en-uk": "2024 July 18 Sunday, 12:00 PM at the venue",
+        "de": "2024 Am 18. Juli, Sonntag, um 12:00 Uhr mittags am Veranstaltungsort",
+        "te": "2024 జూలై 18, ఆదివారం మధ్యాహ్నం 12:00 గంటలకు వేదిక వద్ద",
+        "hi": "2024 18 जुलाई, रविवार को दोपहर 12:00 बजे स्थल पर"
     }
-    
+
     const messageTexts = {
         "en-us": "We're excited to have you join us for the special event!",
         "en-uk": "We're excited to have you join us for the special event!",
@@ -241,13 +112,13 @@ document.addEventListener("DOMContentLoaded", function () {
         "te": "మీరు ఈ ప్రత్యేక కార్యక్రమంలో పాల్గొనడానికి మేము ఉత్సాహంగా ఉన్నాము!",
         "hi": "हम आपके इस खास आयोजन में शामिल होने के लिए उत्साहित हैं!"
     };
-    
+
 
     const settingsBtn = document.getElementById('settings-btn');
     const settingsPanel = document.getElementById('settings-panel');
     const closeBtn = document.getElementById('close-btn');
     const languageSelect = document.getElementById('language-select');
-    const themeToggle = document.getElementById('theme-toggle');
+    //const themeToggle = document.getElementById('theme-toggle');
 
     function getQueryParam(param) {
         const urlParams = new URLSearchParams(window.location.search);
@@ -289,7 +160,7 @@ document.addEventListener("DOMContentLoaded", function () {
         document.getElementById('lunch_timings').textContent = lunchTimings[language];
         // document.getElementById('message').textContent = messageTexts[language];
 
-        
+
     }
 
     function toggleTheme() {
@@ -310,7 +181,7 @@ document.addEventListener("DOMContentLoaded", function () {
         savePreferences();
     });
 
-    themeToggle.addEventListener('click', toggleTheme);
+    //themeToggle.addEventListener('click', toggleTheme);
 
     loadPreferences();
 
@@ -325,7 +196,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
 
-    
+
     /*
     
         "పులగం వారి గ్రుహప్రవేశ ఆహ్వనం",
