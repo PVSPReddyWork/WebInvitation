@@ -169,13 +169,21 @@ document.addEventListener("DOMContentLoaded", function () {
         "te": "ప్రియుడు/ప్రియురాలా",
         "hi": "प्रिय"
     }
-    
+    /*
     const introductionText = {
         "en-us": "Welcome!",
         "en-uk": "Welcome!",
         "de": "Willkommen!",
         "te": "మా కొత్త ఇంటి శుభవార్తను మీతో పంచుకోవడానికి చాలా ఆనందంగా ఉంది. ఈ కొత్త అధ్యాయం ప్రారంభంలో మీ అభిమానం మరియు ఆశీస్సులను కోరుకుంటున్నాం. ఈ సంతోషకరమైన సందర్భంలో మీరు పాల్గొనాలని కోరుకుంటున్నాము",
         "hi": "स्वागत है! हमें खुशी है कि हम आपके साथ हमारे नए घर की खुशी साझा कर सकते हैं। इस नए अध्याय की शुरुआत में, हम आपके प्यार और आशीर्वाद की कामना करते हैं। इस खुशी के मौके पर हम आपको आमंत्रित करते हैं।"
+    };
+*/
+    const introductionText = {
+        "en-us": "We are very happy to share the good news of our new home with you. We seek your love and blessings as we begin this new chapter. We hope you will join us in this joyous occasion.",
+        "en-uk": "We are very happy to share the good news of our new home with you. We seek your love and blessings as we begin this new chapter. We hope you will join us in this joyous occasion.",
+        "de": "Wir freuen uns sehr, Ihnen die frohe Botschaft von unserem neuen Zuhause mitzuteilen. Wir suchen Ihre Liebe und Ihren Segen, während wir dieses neue Kapitel beginnen. Wir hoffen, dass Sie an diesem freudigen Anlass teilnehmen werden.",
+        "te": "మా కొత్త ఇంటి శుభవార్తను మీతో పంచుకోవడానికి చాలా ఆనందంగా ఉంది. ఈ కొత్త అధ్యాయం ప్రారంభంలో మీ అభిమానం మరియు ఆశీస్సులను కోరుకుంటున్నాం. ఈ సంతోషకరమైన సందర్భంలో మీరు పాల్గొనాలని కోరుకుంటున్నాము",
+        "hi": "हमें आपके साथ हमारे नए घर की शुभ खबर साझा करते हुए बहुत खुशी हो रही है। इस नए अध्याय की शुरुआत में हम आपका प्यार और आशीर्वाद चाहते हैं। हम आशा करते हैं कि आप इस खुशी के मौके पर हमारे साथ जुड़ेंगे।"
     };
     
     const venueText = {
