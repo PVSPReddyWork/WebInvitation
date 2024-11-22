@@ -8,6 +8,7 @@ const heightSlider = document.getElementById("heightSlider");
 let rectangles = [];
 let selectedRectangle = null;
 let isDragging = false;
+let dragStartX, dragStartY;
 
 // Function to add a new rectangle
 function addRectangle() {
@@ -25,10 +26,14 @@ function addRectangle() {
   rectangles.push({ id: rectId, element: rect });
   addToSidebar(rectId);
 
-  // Add event listeners
+  // Add event listeners for desktop and mobile
   rect.addEventListener("mousedown", startDragging);
-  rect.addEventListener("mouseup", stopDragging);
   rect.addEventListener("mousemove", dragRectangle);
+  rect.addEventListener("mouseup", stopDragging);
+
+  rect.addEventListener("touchstart", startDraggingTouch);
+  rect.addEventListener("touchmove", dragRectangleTouch);
+  rect.addEventListener("touchend", stopDragging);
 
   // Allow adding an image
   rect.addEventListener("dblclick", () => addImageToRectangle(rect));
@@ -45,11 +50,13 @@ function addToSidebar(id) {
   rectangleList.appendChild(listItem);
 }
 
-// Function to handle dragging
+// Function to handle dragging (mouse)
 function startDragging(event) {
   if (event.target.classList.contains("rectangle")) {
     selectedRectangle = event.target;
     isDragging = true;
+    dragStartX = event.clientX - selectedRectangle.offsetLeft;
+    dragStartY = event.clientY - selectedRectangle.offsetTop;
     selectedRectangle.style.cursor = "grabbing";
     showSliders();
   }
@@ -57,8 +64,8 @@ function startDragging(event) {
 
 function dragRectangle(event) {
   if (isDragging && selectedRectangle) {
-    selectedRectangle.style.left = event.pageX - selectedRectangle.offsetWidth / 2 + "px";
-    selectedRectangle.style.top = event.pageY - selectedRectangle.offsetHeight / 2 + "px";
+    selectedRectangle.style.left = event.clientX - dragStartX + "px";
+    selectedRectangle.style.top = event.clientY - dragStartY + "px";
   }
 }
 
@@ -66,6 +73,26 @@ function stopDragging() {
   if (selectedRectangle) {
     selectedRectangle.style.cursor = "grab";
     isDragging = false;
+  }
+}
+
+// Function to handle dragging (touch)
+function startDraggingTouch(event) {
+  const touch = event.touches[0];
+  if (event.target.classList.contains("rectangle")) {
+    selectedRectangle = event.target;
+    isDragging = true;
+    dragStartX = touch.clientX - selectedRectangle.offsetLeft;
+    dragStartY = touch.clientY - selectedRectangle.offsetTop;
+    showSliders();
+  }
+}
+
+function dragRectangleTouch(event) {
+  if (isDragging && selectedRectangle) {
+    const touch = event.touches[0];
+    selectedRectangle.style.left = touch.clientX - dragStartX + "px";
+    selectedRectangle.style.top = touch.clientY - dragStartY + "px";
   }
 }
 
