@@ -3,103 +3,40 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Interior Design Tool</title>
-  <style>
-    body {
-      margin: 0;
-      display: flex;
-      flex-direction: column;
-      height: 100vh;
-    }
-    #drawingArea {
-      flex: 1;
-      border: 1px solid #ccc;
-      position: relative;
-      overflow: hidden;
-    }
-    .rectangle {
-      position: absolute;
-      border: 2px solid #000;
-      cursor: grab;
-    }
-    #tools {
-      background: #f4f4f4;
-      border-top: 1px solid #ccc;
-      padding: 10px;
-      display: flex;
-      justify-content: space-between;
-    }
-    #sidebar {
-      width: 200px;
-      position: absolute;
-      right: 10px;
-      top: 10px;
-      height: 90%;
-      background: #fff;
-      border: 1px solid #ccc;
-      overflow-y: auto;
-      display: none;
-      z-index: 999;
-    }
-    #sidebar ul {
-      list-style: none;
-      padding: 0;
-    }
-    #sidebar ul li {
-      padding: 5px;
-      cursor: pointer;
-      border-bottom: 1px solid #ccc;
-    }
-    #toggleSidebar {
-      position: fixed;
-      right: 10px;
-      bottom: 10px;
-      padding: 10px 15px;
-      background: #007BFF;
-      color: white;
-      border: none;
-      border-radius: 50%;
-      font-size: 16px;
-      cursor: pointer;
-      z-index: 1000;
-    }
-    #sliders {
-      position: fixed;
-      left: 10px;
-      bottom: 10px;
-      background: #fff;
-      border: 1px solid #ccc;
-      padding: 10px;
-      display: none;
-    }
-    #sliders label {
-      display: block;
-      margin-bottom: 5px;
-    }
-  </style>
+  <title>Interactive Design App</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+  <!-- Floating Button -->
+  <div id="floatingButton" onclick="toggleSidebar()">☰</div>
+
+  <!-- Sidebar -->
+  <div id="sidebar">
+    <button onclick="addRectangle()">Add Rectangle</button>
+    <button onclick="saveDesign()">Save Current Design</button>
+    <button onclick="exportDesign()">Export Current Design</button>
+    <button onclick="exportAllDesigns()">Export All Designs</button>
+    <input type="file" id="importInput" onchange="importDesign()" style="display: none;">
+    <button onclick="document.getElementById('importInput').click()">Import Design</button>
+    <input type="file" id="importAllInput" onchange="importAllDesigns()" style="display: none;">
+    <button onclick="document.getElementById('importAllInput').click()">Import All Designs</button>
+    <button onclick="clearDrawingArea()">Clear Drawing Area</button>
+    <hr>
+    <label for="widthSlider">Width:</label>
+    <input type="range" id="widthSlider" min="10" max="500">
+    <label for="heightSlider">Height:</label>
+    <input type="range" id="heightSlider" min="10" max="500">
+    <hr>
+    <button onclick="toggleCollapsibleList('workList')">Toggle Work List</button>
+    <div id="workList" class="collapsible-list"></div>
+    <button onclick="toggleCollapsibleList('rectangleList')">Toggle Rectangle List</button>
+    <ul id="rectangleList" class="collapsible-list"></ul>
+  </div>
+
+  <!-- Drawing Area -->
   <div id="drawingArea"></div>
 
-  <div id="sliders">
-    <label>
-      Width:
-      <input type="range" id="widthSlider" min="50" max="500">
-    </label>
-    <label>
-      Height:
-      <input type="range" id="heightSlider" min="50" max="500">
-    </label>
-  </div>
-
-  <button id="toggleSidebar" onclick="toggleSidebar()">☰</button>
-
-  <div id="sidebar">
-    <h4>Rectangles</h4>
-    <button onclick="addRectangle()">Add Rectangle</button>
-    <ul id="rectangleList"></ul>
-  </div>
-
+  <!-- JavaScript -->
   <script src="app.js"></script>
 </body>
 </html>

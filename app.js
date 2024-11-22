@@ -1,145 +1,189 @@
 const drawingArea = document.getElementById("drawingArea");
-const rectangleList = document.getElementById("rectangleList");
 const sidebar = document.getElementById("sidebar");
-const sliders = document.getElementById("sliders");
-const widthSlider = document.getElementById("widthSlider");
-const heightSlider = document.getElementById("heightSlider");
-
-let rectangles = [];
+const rectangleList = document.getElementById("rectangleList");
+const workList = document.getElementById("workList");
 let selectedRectangle = null;
-let isDragging = false;
-let dragStartX, dragStartY;
+let allDesigns = [];
 
-// Function to add a new rectangle
-function addRectangle() {
-  const rectId = "rect-" + Date.now();
-  const rect = document.createElement("div");
-  rect.className = "rectangle";
-  rect.id = rectId;
-  rect.style.width = "100px";
-  rect.style.height = "100px";
-  rect.style.top = "50px";
-  rect.style.left = "50px";
-  drawingArea.appendChild(rect);
-
-  // Add to rectangles array and sidebar
-  rectangles.push({ id: rectId, element: rect });
-  addToSidebar(rectId);
-
-  // Add event listeners for desktop and mobile
-  rect.addEventListener("mousedown", startDragging);
-  rect.addEventListener("mousemove", dragRectangle);
-  rect.addEventListener("mouseup", stopDragging);
-
-  rect.addEventListener("touchstart", startDraggingTouch);
-  rect.addEventListener("touchmove", dragRectangleTouch);
-  rect.addEventListener("touchend", stopDragging);
-
-  // Allow adding an image
-  rect.addEventListener("dblclick", () => addImageToRectangle(rect));
-
-  // Ensure the new rectangle is on top
-  rect.style.zIndex = rectangles.length;
-}
-
-// Function to add rectangle to sidebar
-function addToSidebar(id) {
-  const listItem = document.createElement("li");
-  listItem.textContent = id;
-  listItem.onclick = () => selectRectangleById(id);
-  rectangleList.appendChild(listItem);
-}
-
-// Function to handle dragging (mouse)
-function startDragging(event) {
-  if (event.target.classList.contains("rectangle")) {
-    selectedRectangle = event.target;
-    isDragging = true;
-    dragStartX = event.clientX - selectedRectangle.offsetLeft;
-    dragStartY = event.clientY - selectedRectangle.offsetTop;
-    selectedRectangle.style.cursor = "grabbing";
-    showSliders();
-  }
-}
-
-function dragRectangle(event) {
-  if (isDragging && selectedRectangle) {
-    selectedRectangle.style.left = event.clientX - dragStartX + "px";
-    selectedRectangle.style.top = event.clientY - dragStartY + "px";
-  }
-}
-
-function stopDragging() {
-  if (selectedRectangle) {
-    selectedRectangle.style.cursor = "grab";
-    isDragging = false;
-  }
-}
-
-// Function to handle dragging (touch)
-function startDraggingTouch(event) {
-  const touch = event.touches[0];
-  if (event.target.classList.contains("rectangle")) {
-    selectedRectangle = event.target;
-    isDragging = true;
-    dragStartX = touch.clientX - selectedRectangle.offsetLeft;
-    dragStartY = touch.clientY - selectedRectangle.offsetTop;
-    showSliders();
-  }
-}
-
-function dragRectangleTouch(event) {
-  if (isDragging && selectedRectangle) {
-    const touch = event.touches[0];
-    selectedRectangle.style.left = touch.clientX - dragStartX + "px";
-    selectedRectangle.style.top = touch.clientY - dragStartY + "px";
-  }
-}
-
-// Add an image to the rectangle
-function addImageToRectangle(rect) {
-  const input = document.createElement("input");
-  input.type = "file";
-  input.accept = "image/*";
-  input.style.display = "none";
-
-  input.addEventListener("change", () => {
-    const file = input.files[0];
-    const reader = new FileReader();
-
-    reader.onload = () => {
-      rect.style.backgroundImage = `url(${reader.result})`;
-      rect.style.backgroundSize = "cover";
-    };
-
-    reader.readAsDataURL(file);
-  });
-
-  input.click();
-}
-
-// Function to toggle sidebar visibility
+/* Sidebar Toggle */
 function toggleSidebar() {
-  sidebar.style.display = sidebar.style.display === "block" ? "none" : "block";
+  sidebar.classList.toggle("open");
 }
 
-// Function to select rectangle by ID
-function selectRectangleById(id) {
-  selectedRectangle = rectangles.find((r) => r.id === id).element;
-  showSliders();
+/* Add Rectangle */
+function addRectangle() {
+  const rectangle = document.createElement("div");
+  rectangle.classList.add("rectangle");
+  rectangle.id = `rect-${Date.now()}`;
+  rectangle.style.left = "50px";
+  rectangle.style.top = "50px";
+  rectangle.style.width = "100px";
+  rectangle.style.height = "100px";
+  setupRectangleEvents(rectangle);
+  drawingArea.appendChild(rectangle);
+  renderRectangleList();
 }
 
-// Show sliders for resizing
-function showSliders() {
-  sliders.style.display = "block";
-  widthSlider.value = parseInt(selectedRectangle.style.width);
-  heightSlider.value = parseInt(selectedRectangle.style.height);
+/* Rectangle Events */
+function setupRectangleEvents(rectangle) {
+  rectangle.addEventListener("mousedown", startDrag);
+  rectangle.addEventListener("touchstart", startDrag);
+  rectangle.addEventListener("click", () => selectRectangle(rectangle));
+}
+
+function startDrag(e) {
+  e.preventDefault();
+  const rect = e.target;
+  const offsetX = (e.touches ? e.touches[0].clientX : e.clientX) - rect.offsetLeft;
+  const offsetY = (e.touches ? e.touches[0].clientY : e.clientY) - rect.offsetTop;
+
+  function onDrag(e) {
+    const x = (e.touches ? e.touches[0].clientX : e.clientX) - offsetX;
+    const y = (e.touches ? e.touches[0].clientY : e.clientY) - offsetY;
+    rect.style.left = `${x}px`;
+    rect.style.top = `${y}px`;
+  }
+
+  function stopDrag() {
+    document.removeEventListener("mousemove", onDrag);
+    document.removeEventListener("mouseup", stopDrag);
+    document.removeEventListener("touchmove", onDrag);
+    document.removeEventListener("touchend", stopDrag);
+  }
+
+  document.addEventListener("mousemove", onDrag);
+  document.addEventListener("mouseup", stopDrag);
+  document.addEventListener("touchmove", onDrag);
+  document.addEventListener("touchend", stopDrag);
+}
+
+/* Select Rectangle */
+function selectRectangle(rectangle) {
+  selectedRectangle = rectangle;
+  const widthSlider = document.getElementById("widthSlider");
+  const heightSlider = document.getElementById("heightSlider");
+
+  widthSlider.value = rectangle.offsetWidth;
+  heightSlider.value = rectangle.offsetHeight;
 
   widthSlider.oninput = () => {
-    if (selectedRectangle) selectedRectangle.style.width = widthSlider.value + "px";
+    rectangle.style.width = `${widthSlider.value}px`;
   };
 
   heightSlider.oninput = () => {
-    if (selectedRectangle) selectedRectangle.style.height = heightSlider.value + "px";
+    rectangle.style.height = `${heightSlider.value}px`;
   };
+}
+
+/* Render Rectangle List */
+function renderRectangleList() {
+  rectangleList.innerHTML = "";
+  const rectangles = document.querySelectorAll(".rectangle");
+  rectangles.forEach((rect, index) => {
+    const listItem = document.createElement("li");
+    listItem.textContent = `Rectangle ${index + 1}`;
+    listItem.onclick = () => selectRectangle(rect);
+    rectangleList.appendChild(listItem);
+  });
+}
+
+/* Save Design */
+function saveDesign() {
+  const rectangles = Array.from(document.querySelectorAll(".rectangle")).map(rect => ({
+    id: rect.id,
+    x: rect.offsetLeft,
+    y: rect.offsetTop,
+    width: rect.offsetWidth,
+    height: rect.offsetHeight,
+    background: rect.style.backgroundImage,
+  }));
+  const designName = `Design ${allDesigns.length + 1}`;
+  allDesigns.push({ name: designName, rectangles });
+  renderWorkList();
+}
+
+/* Export Design */
+function exportDesign() {
+  const json = JSON.stringify(allDesigns[allDesigns.length - 1], null, 2);
+  downloadJSON(json, "design.json");
+}
+
+function exportAllDesigns() {
+  const json = JSON.stringify(allDesigns, null, 2);
+  downloadJSON(json, "all_designs.json");
+}
+
+/* Import Design */
+function importDesign() {
+  const file = document.getElementById("importInput").files[0];
+  if (file) {
+    const reader = new FileReader();
+    reader.onload = function () {
+      const design = JSON.parse(reader.result);
+      loadDesign(design);
+    };
+    reader.readAsText(file);
+  }
+}
+
+function importAllDesigns() {
+  const file = document.getElementById("importAllInput").files[0];
+  if (file) {
+    const reader = new FileReader();
+    reader.onload = function () {
+      allDesigns = JSON.parse(reader.result);
+      renderWorkList();
+    };
+    reader.readAsText(file);
+  }
+}
+
+/* Load Design */
+function loadDesign(design) {
+  clearDrawingArea();
+  design.rectangles.forEach(rectData => {
+    const rect = document.createElement("div");
+    rect.classList.add("rectangle");
+    rect.id = rectData.id;
+    rect.style.left = `${rectData.x}px`;
+    rect.style.top = `${rectData.y}px`;
+    rect.style.width = `${rectData.width}px`;
+    rect.style.height = `${rectData.height}px`;
+    if (rectData.background) rect.style.backgroundImage = rectData.background;
+    setupRectangleEvents(rect);
+    drawingArea.appendChild(rect);
+  });
+  renderRectangleList();
+}
+
+/* Clear Drawing Area */
+function clearDrawingArea() {
+  drawingArea.innerHTML = "";
+  renderRectangleList();
+}
+
+/* Render Work List */
+function renderWorkList() {
+  workList.innerHTML = "";
+  allDesigns.forEach((design, index) => {
+    const listItem = document.createElement("div");
+    listItem.textContent = `${design.name}`;
+    listItem.onclick = () => loadDesign(design);
+    workList.appendChild(listItem);
+  });
+}
+
+/* Collapsible List */
+function toggleCollapsibleList(id) {
+  const list = document.getElementById(id);
+  list.style.display = list.style.display === "none" ? "block" : "none";
+}
+
+/* Download JSON */
+function downloadJSON(json, filename) {
+  const blob = new Blob([json], { type: "application/json" });
+  const link = document.createElement("a");
+  link.href = URL.createObjectURL(blob);
+  link.download = filename;
+  link.click();
 }
