@@ -10,6 +10,50 @@ function toggleSidebar() {
   sidebar.classList.toggle("open");
 }
 
+/* Add Image Button Listener */
+//const addImageButton = document.createElement("button");
+//addImageButton.textContent = "Add Image to Rectangle";
+//addImageButton.onclick = () => 
+  function AddImageClicked() {
+  if (selectedRectangle) {
+    const inputFile = document.createElement("input");
+    inputFile.type = "file";
+    inputFile.accept = "image/*";
+    inputFile.onchange = (event) => {
+      const file = event.target.files[0];
+      if (file) {
+        const reader = new FileReader();
+        reader.onload = (e) => {
+          selectedRectangle.style.backgroundImage = `url(${e.target.result})`;
+        };
+        reader.readAsDataURL(file);
+      }
+    };
+    inputFile.click();
+  } else {
+    alert("Please select a rectangle first!");
+  }
+};
+
+let bordersVisible = true;
+function ToggleBorders() {
+  bordersVisible = !bordersVisible;
+  const rectangles = document.querySelectorAll(".rectangle");
+  rectangles.forEach((rect) => {
+    rect.style.border = bordersVisible ? "2px solid #000" : "none";
+  });
+}
+
+function DeleteRectangle() {
+  if (selectedRectangle) {
+    selectedRectangle.remove();
+    selectedRectangle = null;
+    renderRectangleList();
+  } else {
+    alert("Please select a rectangle first!");
+  }
+}
+
 /* Add Rectangle */
 function addRectangle() {
   const rectangle = document.createElement("div");
